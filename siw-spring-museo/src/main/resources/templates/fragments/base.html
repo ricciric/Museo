@@ -7,7 +7,7 @@
 </head>
 <body>
 	<nav th:fragment ="nav">
-      <div class = "nav_item"><a class = "nav_link" th:href = "@{/artisti}">Autori</a></div>
+      <div class = "nav_item"><a class = "nav_link" th:href = "@{/artisti}">Artisti</a></div>
       <div class = "nav_item"><a class = "nav_link" th:href = "@{/collezioni}">Collezioni</a></div>
       <div class = "nav_item" sec:authorize="isAnonymous()"><a class = "nav_link" th:href = "@{/login}">Accedi</a></div>
       <div class = "nav_item" sec:authorize="isAnonymous()"><a class = "nav_link" th:href = "@{/registrazione}">Registrati</a></div>
