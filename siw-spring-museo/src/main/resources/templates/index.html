@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <link th:href="@{/css/index.css}" rel="stylesheet">
+  <link th:replace="fragments/base.html :: style"> 
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Orelega+One&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&family=Orelega+One&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Girassol&display=swap" rel="stylesheet">
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Home</title>
+</head>
+<body>
+  <nav th:replace="fragments/base.html :: nav"></nav>
+  <header th:replace = "fragments/base.html :: header"></header>
+  <section>
+    <div class = "text_description">Il surrealismo è un movimento artistico d'avanguardia del Novecento
+      nato come evoluzione del dadaismo e che coinvolse tutte le arti,
+      toccando anche letteratura e cinema, nato negli anni 20 a Parigi;
+      dove nel 1924 ne fu scritto il primo manifesto
+      .Il Surrealismo è un movimento artistico che vuole esprimere 
+      una realtà superiore, fatta di irrazionale
+      e di sogno e che vuole rivelare gli aspetti più profondi della psiche.</div>
+    <div id = "container">
+      <div id = "flex-item1"> 
+      </div>
+      <div id = "flex-item2">
+      </div>
+       <div class = "text_description">«Automatismo psichico puro, attraverso il quale ci si propone di esprimere, con le parole o la scrittura o in altro modo, il reale funzionamento del pensiero. Comando del pensiero, in assenza di qualsiasi controllo esercitato dalla ragione, al di fuori di ogni preoccupazione estetica e morale.»
+
+(André Breton, Manifesto del Surrealismo, 1924)</div>
+      <div id = "flex-item3">
+      </div>
+      <div id = "flex-item4"> 
+      </div>
+    </div>
+  </section>
+  <footer th:replace="fragments/base.html :: footer"></footer>
+</body>
+</html>

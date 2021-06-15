@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link th:replace="fragments/base.html :: style">
+<link th:href="@{/css/list.css}" rel="stylesheet">
+<title>collezioni</title>
+</head>
+<body>
+  <nav th:replace="fragments/base.html :: nav"></nav>
+	<header th:replace="fragments/base.html :: header"></header>
+	<h4>Lista delle collezioni(admin):</h4>
+	<ul>
+		<li th:each="collezione : ${collezioni}"><a
+			href="collezioneForm.html"
+			th:href="@{'/admin/collezione' + '/' + ${collezione.id}}"
+			th:text="${collezione.nome}"></a><span class="intermezzo"> a cura di </span><span><a href="curatoreForm.html" th:href="@{'/admin/curatore/' + ${collezione.curatore.id}}" th:text="|${collezione.curatore.nome} ${collezione.curatore.cognome}|" >Riccardo Marasca</a></span></li>
+	</ul>
+	<footer th:replace="fragments/base.html :: footer"></footer>
+</body>
+</html>

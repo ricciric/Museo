@@ -1,0 +1,90 @@
+:root{
+    --backColor: #181b1c;
+}
+
+body{
+  background-color: var(--backColor);
+}
+
+#immagine_artista{
+  text-align: center;
+  margin-bottom:20px;
+}
+
+#immagine_artista img{
+   border: solid white 5px;
+}
+
+.info{
+  text-align:center;
+  color:white;
+  padding: 20px;
+}
+
+#name{
+  font-size: 28px;
+  font-weight:bold;
+  padding: 5px;
+}
+
+#date{
+  padding:5px 0px;
+}
+
+h1{
+  margin: 20px 0px;
+  text-align:center;
+  font-size:40px;
+}
+
+.biografia{
+  margin:auto;
+  background-color: lightgray;
+  padding: 20px;
+  border: solid darkOrchid 4px;
+  text-align:center;
+  font-size:20px;
+  width:60%;
+}
+
+#elenco{
+  padding: 1%;
+  height: auto;
+  display:flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.opera{
+  padding: 2%;
+  margin: 2%;
+  width: 28%;
+  text-align: center;
+  border: solid gold 5px;
+  padding-bottom:20px;
+}
+
+.immagine{
+  padding-top:20px;
+  width: 100%;
+  height: 100%;
+  
+}
+
+.titolo a{
+  font-size: 20px;
+  font-weight: bolder;
+  padding-bottom:10px;
+  color:white;
+}
+
+a {
+  padding: 2px 1px 0;
+  color: white;
+}
+
+a:hover{
+  color:gold;
+}
+

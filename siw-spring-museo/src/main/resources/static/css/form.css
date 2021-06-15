@@ -1,0 +1,14 @@
+.container {
+	margin-top: 1%; width : 500px;
+	clear: both;
+	width: 500px;
+}
+
+.container input {
+	width: 100%;
+	clear: both;
+}
+
+button{
+	margin-top:1%;
+}

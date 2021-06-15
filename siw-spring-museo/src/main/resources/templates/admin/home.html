@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<link th:replace="fragments/base.html :: style"></link>
+<meta charset="ISO-8859-1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Home ADMIN</title>
+</head>
+<body>
+	<nav th:replace="fragments/base.html :: nav"></nav>
+	<header th:replace="fragments/base.html :: header"></header>
+	<h1 th:color = "blue">Home AMMINISTRATORE</h1>
+		<div>
+			<a href="admin/opere" th:href="@{/admin/opere}">Elenco opere</a>
+   		</div>
+   		<div>
+			<a href="admin/collezioni" th:href="@{/admin/lista_collezioni}">Elenco collezioni</a>
+   		</div>
+   		<div>
+			<a th:href="@{/logout}">Logout</a>
+   		</div>
+	<footer th:replace="fragments/base.html :: footer"></footer>
+</body>
+</html>

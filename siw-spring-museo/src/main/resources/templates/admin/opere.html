@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link th:replace="fragments/base.html :: style">
+<title>opere</title>
+</head>
+<body>
+  <nav th:replace="fragments/base.html :: nav"></nav>
+	<header th:replace="fragments/base.html :: header"></header>
+	<h4>Lista delle opere(admin):</h4>
+	<ul>
+		<li th:each="opera : ${opere}"><a
+			href="operaForm.html"
+			th:href="@{'/admin/opera' + '/' + ${opera.id}}"
+			th:text="${opera.titolo}">Gallo Rosso</a></li>
+	</ul>
+	<footer th:replace="fragments/base.html :: footer"></footer>
+</body>
+</html>

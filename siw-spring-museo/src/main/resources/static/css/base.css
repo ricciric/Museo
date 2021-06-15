@@ -1,0 +1,60 @@
+nav {
+	display: flex;
+	justify-content: space-around;
+	background-color: darkgreen;
+}
+
+.nav_item {
+	text-align: center;
+	padding: 8px;
+}
+
+header {
+	font-family: 'Montserrat', sans-serif;
+	color: ghostwhite;
+	padding: 20px;
+	text-align: center;
+	height: 20%;
+	font-weight: bold;
+	font-size: 300%;
+	background-color: darkOrange;
+}
+
+a {
+	color: darkgreen;
+	padding: 2px 1px 0;
+	font-size: 20px;
+	text-decoration: none;
+}
+
+a:hover {
+	color: gold;
+	text-decoration: none;
+}
+
+.footerNav{
+	margin-top: 4%;
+}
+
+.footerNav a {
+	color: darkgreen;
+	text-decoration: none;
+}
+
+.footerNav a:hover {
+	color: gold;
+	font-size: 25px;
+	text-decoration: none;
+}
+
+.nav_link {
+	color: white;
+	text-decoration: none;
+}
+
+.utente {
+	display: flex;
+	justify-content: space-around;
+	background-color: darkgreen;
+	text-decoration: none;
+}

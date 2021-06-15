@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<link th:href="@{/css/form.css}" rel="stylesheet">
+<link th:replace="fragments/base.html :: style">
+<meta charset="ISO-8859-1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Modifica Opera</title>
+</head>
+<body>
+	<nav th:replace="fragments/base.html :: nav"></nav>
+	<header th:replace="fragments/base.html :: header"></header>
+	<div>
+		<h4>Inserisci i dati dell'opera</h4>
+	</div>
+	<form th:action="@{/admin/opera}" method="POST">
+		<div class="container">
+			<div>
+				<span><input type="hidden" th:field="${opera.id}" readonly /></span>
+			</div>
+			<div>
+				<span><input type="hidden" th:field="${opera.collezione.id}"
+					readonly /></span>
+			</div>
+			<div>
+				<span><input type="hidden" th:field="${opera.artista.id}"
+					readonly /></span>
+			</div>
+			<div>
+				<span>Titolo: </span> <span><input type="text"
+					th:field="${opera.titolo}" required /></span>
+				<div th:if="${#fields.hasErrors('opera.titolo')}"
+					th:errors="${opera.titolo}" th:style="'color:red'"></div>
+			</div>
+			<div>
+				<span>Anno: </span> <span><input type="text"
+					th:field="${opera.anno}" th:value="${opera.anno}" required /></span>
+				<div th:if="${#fields.hasErrors('opera.anno')}"
+					th:errors="${opera.anno}" th:style="'color:red'"></div>
+			</div>
+			<div>
+				<div>Descrizione:</div>
+				<span><textarea rows="6" cols="70" name="biografia"
+						th:field="${opera.descrizione}" th:text="${opera.descrizione}"
+						required></textarea> </span>
+				<div th:if="${#fields.hasErrors('opera.descrizione')}"
+					th:errors="${opera.descrizione}" th:style="'color:red'"></div>
+			</div>
+			<div>
+				<span><button type="submit">Invia</button></span>
+			</div>
+		</div>
+	</form>
+	<footer th:replace="fragments/base.html :: footer"></footer>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link th:replace="fragments/base.html :: style"> 
+<title>autori</title>
+</head>
+<body>
+  <nav th:replace="fragments/base.html :: nav"></nav>
+	<header th:replace="fragments/base.html :: header"></header>
+	<div>
+		<h4>Lista degli autori:</h4>
+		<ul>
+			<li th:each="artista : ${artisti}"><a href="artista.html"
+				th:href="@{'/artista' + '/' + ${artista.id}}"
+				th:text="|${artista.nome} ${artista.cognome}|">Salvador Dali</a></li>
+		</ul>
+	</div>
+	<footer th:replace="fragments/base.html :: footer"></footer>
+</body>
+</html>

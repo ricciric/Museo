@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<link th:href="@{/css/collezione.css}" rel="stylesheet">
+<link th:replace="fragments/base.html :: style"> 
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>collezione</title>
+</head>
+<body>
+  <nav th:replace="fragments/base.html :: nav"></nav>
+	<header th:replace="fragments/base.html :: header"></header>
+	<div id="info_collezione"
+		th:text="|${collezione.nome} a cura di ${collezione.curatore.nome} ${collezione.curatore.cognome}|">La
+		magia Surrealista a cura di Riccardo Marasca</div>
+		<div class="descrizione" th:text="${collezione.descrizione}"></div>
+	<div id="opere">
+		<div class="opera" th:each="opera : ${opere}">
+			<div id="titolo">
+				<a href="opera.html" th:href="@{'/opera/'+ ${opera.id}}"
+					th:text="${opera.titolo}">Sogno causato dal volo di un'ape
+					intorno a una melagrana un attimo prima del risveglio</a>
+			</div>
+			<div id="img"><img
+					th:src="@{'/images/artisti/' + ${opera.artista.nome} + '_' + ${opera.artista.cognome} + '/opere/' + ${opera.titolo} + '.jpg'}" width=600></div>
+			<div id="info_autore">
+				<a href="artista.html"
+					th:href="@{'/artista' + '/' + ${opera.artista.id}}"
+					th:text="|${opera.artista.nome} ${opera.artista.cognome}|">Salvador
+					Dalì</a>
+			</div>
+		</div>
+	</div>
+	<footer th:replace="fragments/base.html :: footer"></footer>
+</body>
+</html>

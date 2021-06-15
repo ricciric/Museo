@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<link th:href="@{/css/form.css}" rel="stylesheet">
+<link th:replace="fragments/base.html :: style">
+<meta charset="ISO-8859-1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Modifica Curatore</title>
+</head>
+<body>
+	<nav th:replace="fragments/base.html :: nav"></nav>
+	<header th:replace="fragments/base.html :: header"></header>
+	<div>
+		<h4>Inserisci i dati del curatore</h4>
+	</div>
+	<form th:action="@{/admin/curatore}" method="POST">
+		<div class="container">
+			<div>
+			 <span><input
+					type="hidden" th:field="${curatore.id}" readonly /></span>
+			</div>
+			<div>
+				<span>Nome curatore:</span> <span><input type="text"
+					th:field="${curatore.nome}" th:value="${curatore.nome}"
+					required /></span>
+				<div th:if="${#fields.hasErrors('curatore.nome')}"
+					th:errors="${curatore.nome}" th:style="'color:red'"></div>
+			</div>
+			<div>
+				<span>Cognome curatore:</span> <span><input type="text"
+					th:field="${curatore.cognome}" th:value="${curatore.cognome}"
+					required /></span>
+				<div th:if="${#fields.hasErrors('curatore.cognome')}"
+					th:errors="${curatore.cognome}" th:style="'color:red'"></div>
+			</div>
+			<div>
+				<span>Data di nascita:</span> <span><input type="date"
+					th:field="${curatore.dataNascita}"
+					th:value="${curatore.dataNascita}" required /></span>
+				<div th:if="${#fields.hasErrors('curatore.dataNascita')}"
+					th:errors="${curatore.dataNascita}" th:style="'color:red'"></div>
+			</div>
+			<div>
+				<span>Luogo di nascita:</span> <span><input type="text"
+					th:field="${curatore.luogoNascita}"
+					th:value="${curatore.luogoNascita}" required /></span>
+				<div th:if="${#fields.hasErrors('curatore.luogoNascita')}"
+					th:errors="${curatore.luogoNascita}" th:style="'color:red'"></div>
+			</div>
+			<div>
+				<span>Email:</span> <span><input type="text"
+					th:field="${curatore.email}" th:value="${curatore.email}" required /></span>
+				<div th:if="${#fields.hasErrors('curatore.email')}"
+					th:errors="${curatore.email}" th:style="'color:red'"></div>
+			</div>
+			<div>
+				<span>Numero:</span> <span><input type="text"
+					th:field="${curatore.numero}" th:value="${curatore.numero}"
+					required /></span>
+				<div th:if="${#fields.hasErrors('curatore.numero')}"
+					th:errors="${curatore.numero}" th:style="'color:red'"></div>
+			</div>
+			<div>
+				<span>Matricola:</span> <span><input type="text"
+					th:field="${curatore.matricola}" th:value="${curatore.matricola}"
+					required /></span>
+				<div th:if="${#fields.hasErrors('curatore.matricola')}"
+					th:errors="${curatore.matricola}" th:style="'color:red'"></div>
+			</div>
+			<div>
+				<span><button type="submit">Invia</button></span>
+			</div>
+		</div>
+	</form>
+	<footer th:replace="fragments/base.html :: footer"></footer>
+</body>

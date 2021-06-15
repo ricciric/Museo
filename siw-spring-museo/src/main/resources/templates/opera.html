@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<link th:href="@{/css/opera.css}" rel="stylesheet">
+<link th:replace="fragments/base.html :: style">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link
+	href="https://fonts.googleapis.com/css2?family=Amiri:ital@1&family=Antic+Slab&display=swap"
+	rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link
+	href="https://fonts.googleapis.com/css2?family=Antic+Slab&display=swap"
+	rel="stylesheet">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>opera</title>
+</head>
+<body>
+  <nav th:replace="fragments/base.html :: nav"></nav>
+	<header th:replace="fragments/base.html :: header"></header>
+	<div class=opera th:if="${opera}" th:object="${opera}">
+		<div id="titolo" th:text="*{titolo}">
+			<strong>Sogno causato dal volo di un'ape intorno a una
+				melagrana un attimo prima del risveglio</strong>
+		</div>
+		<div id="image">
+			<img
+				th:src="@{'/images/artisti/' + *{artista.nome} + '_' + *{artista.cognome} + '/opere/' + ${opera.titolo} + '.jpg'}"
+				width=100% height=100% />
+		</div>
+		<div id="descrizione" th:text="*{descrizione}">
+			L'azione del dipinto – l'enorme melograno da cui fuoriesce un pesce
+			che "genera" due tigri dietro a una baionetta – rappresenta il
+			violento risveglio della donna dai suoi sogni tranquilli. Nel quadro
+			appare anche la figura di un elefante, ricorrente in molti quadri di
+			Dalì, ispirato al piedistallo della scultura Obelisco della Minerva
+			di Gian Lorenzo Bernini che si trova a Roma e rappresenta un elefante
+			che trasporta un antico obelisco Il corpo nudo di una donna distesa
+			levita su di uno scoglio sospeso nel vuoto. La superficie,
+			perfettamente liscia della struttura, pare emergere da un mare dalla
+			superficie piatta e vetrificata. La donna sembra dormire serenamente
+			mentre due tigri la stanno per aggredire. In realtà tutta la scena è,
+			tipicamente, surreale. A destra nel dipinto da una melagrana spaccata
+			esce un grande pesce. Dalla bocca dell’animale, poi, fuoriesce una
+			grande tigre. Quindi un’altra esce dalla bocca della prima e l’azione
+			prosegue con un fucile a baionetta la cui punta sta per toccare il
+			braccio della donna distesa. La scena riserva altre visioni surreali.
+			In primo piano un’ape vola intorno ad una melagrana. Sullo sfondo un
+			elefante dalle zampe di ragno traversa tranquillamente la scena
+			portando sulla sua groppa un obelisco di pietra. A destra, verso il
+			bordo del dipinto un promontorio si affaccia sul mare ideale. Il tema
+			dell’elefantino con obelisco sulla schiena fu, probabilmente ispirato
+			a Salvador Dalì da quello creato da Bernini e posto sulla fontana in
+			piazza Minerva a Roma. Questo è un esempio dell'influenza freudiana
+			sull'arte surrealista e del tentativo di Dalí di esplorare il mondo
+			dei sogni.<span th:text="*{anno}">1944</span>
+		</div>
+		<a id="link_artista" href="artista.html" th:href="@{'/artista' + '/' + *{artista.id}}"
+			th:text="|*{artista.nome} *{artista.cognome}|">Salvador Dalì</a> <span
+			th:unless="${opera}">L'opera selezionata non esiste</span>
+	</div>
+	<footer th:replace="fragments/base.html :: footer"></footer>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+<head>
+<meta charset="UTF-8">
+<link th:fragment="style" th:href ="@{/css/base.css}" rel="stylesheet">
+<title th:text="${title}">titolo</title>
+</head>
+<body>
+	<nav th:fragment ="nav">
+      <div class = "nav_item"><a class = "nav_link" th:href = "@{/artisti}">Autori</a></div>
+      <div class = "nav_item"><a class = "nav_link" th:href = "@{/collezioni}">Collezioni</a></div>
+      <div class = "nav_item" sec:authorize="isAnonymous()"><a class = "nav_link" th:href = "@{/login}">Accedi</a></div>
+      <div class = "nav_item" sec:authorize="isAnonymous()"><a class = "nav_link" th:href = "@{/registrazione}">Registrati</a></div>
+      <div class = "nav_item" sec:authorize="isAuthenticated()"><a class = "nav_link" th:href = "@{/logout}">Logout</a></div>
+      <div class = "nav_item" sec:authorize="hasAuthority('AMMINISTRATORE')"><a class = "nav_link" th:href = "@{/default}">Menu Admin</a></div>
+  </nav>
+  <header th:fragment ="header">
+  	Museo Surrealista
+  </header>
+  <footer th:fragment ="footer">
+  <div class = "footerNav">
+  <a th:href="@{/}">Home</a>
+  <a th:href="@{/artisti}">Autori</a>
+  <a th:href = "@{/collezioni}">Collezioni</a>
+  </div>
+  <span>Website by Riccardo Marasca for SIW Project</span>
+  </footer>
+</body>
+</html>
